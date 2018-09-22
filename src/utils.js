@@ -1,3 +1,5 @@
+// These methods are inspired of the work done on @sindresorhus/is: https://github.com/sindresorhus/is
+
 /**
  * @namespace utils
  * @desc utils methods

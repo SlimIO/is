@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "SlimIO is (JavaScript Primitives &amp; Objects type checker)",
   "main": "index.js",
+  "engines": {
+      "node": ">=8"
+  },
+  "private": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +15,7 @@
     "url": "git+https://github.com/SlimIO/is.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "SlimIO",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SlimIO/is/issues"

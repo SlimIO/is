@@ -6,7 +6,8 @@ declare namespace is {
     export function number(value: any): boolean;
     export function undefined(value: any): boolean;
     export function boolean(value: any): boolean;
-    export function nullable(value: any): boolean;
+    export function bool(value: any): boolean;
+    export function nullValue(value: any): boolean;
     export function symbol(value: any): boolean;
     export function bigint(value: any): boolean;
     export function nullOrUndefined(value: any): boolean;
@@ -55,7 +56,7 @@ declare namespace is {
     // Misc
     export function nan(value: any): boolean;
     export function integer(value: any): boolean;
-    export function directInstanceOf(value: any): boolean;
+    export function directInstanceOf(instance: any, focus: any): boolean;
 }
 
 export as namespace is;

@@ -28,14 +28,16 @@ const TypedArrayTypes = new Set([
 // Export all methods
 module.exports = {
     undefined: isTypeOf("undefined"),
+    void: isTypeOf("undefined"),
     string: isTypeOf("string"),
     number: isTypeOf("number"),
     function: isTypeOf("function"),
     boolean: isTypeOf("boolean"),
+    bool: isTypeOf("boolean"),
     symbol: isTypeOf("symbol"),
     bigint: isTypeOf("bigint"),
     func: isTypeOf("function"),
-    nullable: (value) => value === null,
+    nullValue: (value) => value === null,
     nullOrUndefined(value) {
         return this.null(value) || typeof value === "undefined";
     },
