@@ -6,7 +6,7 @@ const { getObjectType, isTypeOf, isObjectOfType } = require("./src/utils");
  * @desc All JavaScript Primitives
  * @type {Set<String>}
  */
-const Primitives = new Set(["string", "number", "boolean", "undefined", "null", "symbol", "bigint"]);
+const Primitives = new Set(["string", "number", "boolean", "undefined", "symbol", "bigint"]);
 
 /**
  * @const TypedArrayTypes
@@ -38,16 +38,18 @@ module.exports = {
     func: isTypeOf("function"),
     nullValue: (value) => value === null,
     nullOrUndefined(value) {
-        return this.null(value) || typeof value === "undefined";
+        return this.nullValue(value) || typeof value === "undefined";
     },
     array: Array.isArray,
     buffer: Buffer.isBuffer,
-    primitive: (value) => Primitives.has(value),
+    primitive(value) {
+        return value === null || Primitives.has(typeof value);
+    },
     promise: isObjectOfType("Promise"),
     generatorFunction: isObjectOfType("GeneratorFunction"),
     asyncFunction: isObjectOfType("AsyncFunction"),
     boundFunction(value) {
-        return this.function(value) && !value.hasOwnProperty("prototype");
+        return this.func(value) && !value.hasOwnProperty("prototype");
     },
     regExp: isObjectOfType("RegExp"),
     date: isObjectOfType("Date"),
@@ -78,26 +80,24 @@ module.exports = {
         return getObjectType(value) === "Object" && (prototype === null || prototype === Object.getPrototypeOf({}));
     },
     typedArray(value) {
-        const objectType = getObjectType(value);
-
-        return objectType === null ? false : TypedArrayTypes.has(objectType);
+        return TypedArrayTypes.has(getObjectType(value));
     },
     directInstanceOf(instance, focusClass) {
         return Object.getPrototypeOf(instance) === focusClass.prototype;
     },
     classObject(value) {
-        return this.function(value) && value.toString().startsWith("class ");
+        return this.func(value) && value.toString().startsWith("class ");
     },
     object(value) {
-        return !this.nullOrUndefined(value) && (this.function(value) || typeof value === "object");
+        return !this.nullOrUndefined(value) && (this.func(value) || typeof value === "object");
     },
     iterable(value) {
-        return !this.nullOrUndefined(value) && this.function(value[Symbol.iterator]);
+        return !this.nullOrUndefined(value) && this.func(value[Symbol.iterator]);
     },
     asyncIterable(value) {
-        return !this.nullOrUndefined(value) && this.function(value[Symbol.asyncIterator]);
+        return !this.nullOrUndefined(value) && this.func(value[Symbol.asyncIterator]);
     },
     generator(value) {
-        return this.iterable(value) && this.function(value.next) && this.function(value.throw);
+        return this.iterable(value) && this.func(value.next) && this.func(value.throw);
     }
 };
