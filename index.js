@@ -31,7 +31,6 @@ module.exports = {
     void: isTypeOf("undefined"),
     string: isTypeOf("string"),
     number: isTypeOf("number"),
-    function: isTypeOf("function"),
     boolean: isTypeOf("boolean"),
     bool: isTypeOf("boolean"),
     symbol: isTypeOf("symbol"),
@@ -62,9 +61,9 @@ module.exports = {
     uint8ClampedArray: isObjectOfType("uint8ClampedArray"),
     int16Array: isObjectOfType("int16Array"),
     uint16Array: isObjectOfType("uint16Array"),
-    int32Array : isObjectOfType("int32Array"),
+    int32Array: isObjectOfType("int32Array"),
     uint32Array: isObjectOfType("uint32Array"),
-    float32Array : isObjectOfType("float32Array"),
+    float32Array: isObjectOfType("float32Array"),
     float64Array: isObjectOfType("float64Array"),
     arrayBuffer: isObjectOfType("ArrayBuffer"),
     sharedArrayBuffer: isObjectOfType("SharedArrayBuffer"),
@@ -79,7 +78,7 @@ module.exports = {
     typedArray(value) {
         const objectType = getObjectType(value);
 
-		return objectType === null ? false : TypedArrayTypes.has(objectType);
+        return objectType === null ? false : TypedArrayTypes.has(objectType);
     },
     directInstanceOf(instance, focusClass) {
         return Object.getPrototypeOf(instance) === focusClass.prototype;
@@ -91,12 +90,12 @@ module.exports = {
         return !this.nullOrUndefined(value) && (this.function(value) || typeof value === "object");
     },
     iterable(value) {
-        return !this.nullOrUndefined(value) && this.function(value[Symbol.iterator])
+        return !this.nullOrUndefined(value) && this.function(value[Symbol.iterator]);
     },
     asyncIterable(value) {
-        return !this.nullOrUndefined(value) && this.function(value[Symbol.asyncIterator])
+        return !this.nullOrUndefined(value) && this.function(value[Symbol.asyncIterator]);
     },
     generator(value) {
         return this.iterable(value) && this.function(value.next) && this.function(value.throw);
     }
-}
+};
