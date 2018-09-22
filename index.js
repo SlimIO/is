@@ -25,48 +25,6 @@ const TypedArrayTypes = new Set([
     "Float64Array"
 ]);
 
-/**
- * @const TypeName
- * @desc All (String) TypeName
- * @type {is.TypeName}
- */
-const TypeName = {
-	null: 'null',
-	boolean: 'boolean',
-	undefined: 'undefined',
-	string: 'string',
-	number: 'number',
-	symbol: 'symbol',
-	Function: 'Function',
-	GeneratorFunction: 'GeneratorFunction',
-	AsyncFunction: 'AsyncFunction',
-	Observable: 'Observable',
-	Array: 'Array',
-	Buffer: 'Buffer',
-	Object: 'Object',
-	RegExp: 'RegExp',
-	Date: 'Date',
-	Error: 'Error',
-	Map: 'Map',
-	Set: 'Set',
-	WeakMap: 'WeakMap',
-	WeakSet: 'WeakSet',
-	Int8Array: 'Int8Array',
-	Uint8Array: 'Uint8Array',
-	Uint8ClampedArray: 'Uint8ClampedArray',
-	Int16Array: 'Int16Array',
-	Uint16Array: 'Uint16Array',
-	Int32Array: 'Int32Array',
-	Uint32Array: 'Uint32Array',
-	Float32Array: 'Float32Array',
-	Float64Array: 'Float64Array',
-	ArrayBuffer: 'ArrayBuffer',
-	SharedArrayBuffer: 'SharedArrayBuffer',
-	DataView: 'DataView',
-	Promise: 'Promise',
-	URL: 'URL'
-}
-
 // Export all methods
 module.exports = {
     undefined: isTypeOf("undefined"),
@@ -138,6 +96,5 @@ module.exports = {
     },
     generator(value) {
         return this.iterable(value) && this.function(value.next) && this.function(value.throw);
-    },
-    TypeName: Object.freeze(TypeName)
+    }
 }

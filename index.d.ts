@@ -56,43 +56,6 @@ declare namespace is {
     export function nan(value: any): boolean;
     export function integer(value: any): boolean;
     export function directInstanceOf(value: any): boolean;
-
-    interface TypeName {
-        readonly null: 'null',
-        readonly boolean: 'boolean',
-        readonly undefined: 'undefined',
-        readonly string: 'string',
-        readonly number: 'number',
-        readonly symbol: 'symbol',
-        readonly Function: 'Function',
-        readonly GeneratorFunction: 'GeneratorFunction',
-        readonly AsyncFunction: 'AsyncFunction',
-        readonly Array: 'Array',
-        readonly Buffer: 'Buffer',
-        readonly Object: 'Object',
-        readonly RegExp: 'RegExp',
-        readonly Date: 'Date',
-        readonly Error: 'Error',
-        readonly Map: 'Map',
-        readonly Set: 'Set',
-        readonly WeakMap: 'WeakMap',
-        readonly WeakSet: 'WeakSet',
-        readonly Int8Array: 'Int8Array',
-        readonly Uint8Array: 'Uint8Array',
-        readonly Uint8ClampedArray: 'Uint8ClampedArray',
-        readonly Int16Array: 'Int16Array',
-        readonly Uint16Array: 'Uint16Array',
-        readonly Int32Array: 'Int32Array',
-        readonly Uint32Array: 'Uint32Array',
-        readonly Float32Array: 'Float32Array',
-        readonly Float64Array: 'Float64Array',
-        readonly ArrayBuffer: 'ArrayBuffer',
-        readonly SharedArrayBuffer: 'SharedArrayBuffer',
-        readonly DataView: 'DataView',
-        readonly Promise: 'Promise'
-    }
-
-    export const TypeName: TypeName;
 }
 
 export as namespace is;
