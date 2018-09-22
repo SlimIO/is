@@ -104,6 +104,8 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | nan | `is.nan(Number("booom!"))` |
 | integer | `is.integer(5 / 10)` |
 | directInstanceOf | `is.directInstanceOf(Object, {})` |
+| truthy | `is.truthy(true)` |
+| falsy | `is.falsy("")` |
 
 ## Why
 
