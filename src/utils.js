@@ -18,9 +18,9 @@
  * getObjectType(new Set()); // Set
  */
 function getObjectType(value) {
-    const objectName = Object.prototype.toString.call(value).slice(8, -1);
-
-    return objectName ? objectName : null;
+    // Object.prototype.toString.call will return object like [object Map], [object Set] etc
+    // Slice from index 8 to value.length - 1
+    return Object.prototype.toString.call(value).slice(8, -1);
 }
 
 /**
@@ -28,7 +28,7 @@ function getObjectType(value) {
  * @memberof utils#
  * @desc Known if a value if equal to the given Primitive type
  * @param {!String} type Primitive type
- * @returns {Boolean}
+ * @returns {is.typeOf}
  *
  * @example
  * const isTypeString = isTypeOf("string");
@@ -44,7 +44,7 @@ function isTypeOf(type) {
  * @memberof utils#
  * @desc Known if an Object name if equal to the closure Object name
  * @param {!String} type JavaScript Object
- * @returns {Boolean}
+ * @returns {is.typeOf}
  *
  * @example
  * const isTypeMap = isObjectOfType("Map");
