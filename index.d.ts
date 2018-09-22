@@ -1,6 +1,8 @@
 /// <reference types="node" />
 
 declare namespace is {
+    export type typeOf = (value: any) => boolean;
+
     // Primitives
     export function string(value: any): boolean;
     export function number(value: any): boolean;
@@ -56,6 +58,8 @@ declare namespace is {
     export function dataView(value: any): boolean;
 
     // Misc
+    export function falsy(value: any): boolean;
+    export function truthy(value: any): boolean;
     export function nan(value: any): boolean;
     export function integer(value: any): boolean;
     export function directInstanceOf(instance: any, focus: any): boolean;

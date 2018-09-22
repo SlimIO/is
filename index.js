@@ -70,6 +70,8 @@ module.exports = {
     dataView: isObjectOfType("DataView"),
     nan: (value) => Number.isNaN(value),
     integer: (value) => Number.isInteger(value),
+    truthy: (value) => Boolean(value),
+    falsy: (value) => !value,
     plainObject(value) {
         const prototype = Object.getPrototypeOf(value);
 
