@@ -36,12 +36,12 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | number | `is.number(10)` |
 | boolean | `is.boolean(true)` |
 | bool | `is.bool(false)` |
-| symbol | `is.symbol(true)` |
+| symbol | `is.symbol(Symbol("foo"))` |
 | undefined | `is.undefined(undefined)` |
 | bigint | `is.bigint(50n)` |
 | nullValue | `is.nullValue(null)` |
 | nullOrUndefined | `is.nullOrUndefined(null | undefined)` |
-| primitive | `is.primitive("string")` |
+| primitive | `is.primitive("hello")` |
 
 > is.null is not available because of a name restriction.
 
@@ -72,7 +72,7 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | func | `is.func(new Function())` |
 | generatorFunction | N/A |
 | asyncFunction | `is.asyncFunction(async function() {})` |
-| boundFunction | N/A |
+| boundFunction | `is.boundFunction((function(){}).bind(null))` |
 | iterable | `is.iterable([1, 2])` |
 | asyncIterable | N/A |
 | generator | N/A |
