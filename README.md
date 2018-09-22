@@ -49,6 +49,7 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 
 | method | example |
 | --- | --- |
+| promise | `is.promise(new Promise())` |
 | classObject | `is.classObject(new Class{})` |
 | array | `is.array([])` |
 | object | `is.nullValue({})` |
@@ -82,6 +83,7 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 
 | method | example |
 | --- | --- |
+| typedArray | `is.typedArray(new int8Array())` |
 | int8Array | `is.int8Array(new int8Array())` |
 | uint8Array | `is.uint8Array(new uint8Array())` |
 | uint8ClampedArray | `is.uint8ClampedArray(new uint8ClampedArray())` |

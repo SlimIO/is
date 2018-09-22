@@ -25,6 +25,7 @@ declare namespace is {
     export function generator(value: any): boolean;
 
     // Objects
+    export function promise(value: any): boolean;
     export function classObject(value: any): boolean;
     export function array(value: any): boolean;
     export function object(value: any): boolean;
@@ -39,6 +40,7 @@ declare namespace is {
     export function regExp(value: any): boolean;
 
     // TypedArray & Buffers
+    export function typedArray(value: any): boolean;
     export function buffer(value: any): boolean;
     export function int8Array(value: any): boolean;
     export function uint8Array(value: any): boolean;
