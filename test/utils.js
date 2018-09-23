@@ -5,11 +5,12 @@ const ava = require("ava");
 const { isTypeOf, getObjectType, isObjectOfType } = require("../src/utils.js");
 
 // Helper
-const Objects = [{}, [], new Map(), new Set(), new WeakMap(), new WeakSet()];
+const Objects = [{}, [], new Map(), new Set(), new WeakMap(), new WeakSet(), new Date(), /regex/];
 
 ava("isTypeOf", function isString(assert) {
     const typeOfString = isTypeOf("string");
     const typeOfObject = isTypeOf("object");
+    const typeOfFunction = isTypeOf("function");
 
     // eslint-disable-next-line no-empty-function
     function hello() {}
@@ -20,13 +21,16 @@ ava("isTypeOf", function isString(assert) {
     assert.true(isTypeOf("number")(5));
     assert.true(isTypeOf("boolean")(true));
     assert.true(isTypeOf("symbol")(Symbol("hello")));
+    assert.true(isTypeOf("symbol")(Symbol.iterator));
     assert.true(isTypeOf("undefined")(undefined));
     assert.true(isTypeOf("undefined")(void 0));
     // assert.is(isTypeOf("bigint")(50n), true);
 
-    assert.true(isTypeOf("function")(hello), true);
+    assert.true(typeOfFunction(hello));
     // eslint-disable-next-line no-empty-function
-    assert.true(isTypeOf("function")(() => {}), true);
+    assert.true(typeOfFunction(() => {}));
+    assert.true(typeOfFunction(Math.sin));
+    assert.true(typeOfFunction(class User {}));
 
     assert.true(typeOfObject(null));
     for (const obj of Objects) {
