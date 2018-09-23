@@ -44,8 +44,10 @@ ava("is.falsy", function falsy(assert) {
 });
 
 ava("is.plainObject", function plainObject(assert) {
-    assert.true(is.plainObject({}));
+    assert.true(is.plainObject({ hello: "world" }));
     assert.true(is.plainObject(Object.create(null)));
+    assert.true(is.plainObject(new Object()));
+    assert.false(is.plainObject([]));
     assert.false(is.plainObject(5));
 });
 
@@ -56,29 +58,45 @@ ava("is.object", function object(assert) {
 });
 
 ava("is.classObject", function classObject(assert) {
+    function cPrototype() {
+        // Do nothing
+    }
+
     // eslint-disable-next-line
     class User {}
     // eslint-disable-next-line
     class Admin extends User {}
     assert.true(is.classObject(User));
     assert.true(is.classObject(Admin));
+    assert.false(is.classObject(new cPrototype()));
     assert.false(is.classObject({}));
+    assert.false(is.classObject([]));
 });
 
 ava("is.iterable", function iterable(assert) {
+    const customIterable = {};
+    customIterable[Symbol.iterator] = function* custom() {
+        yield 1;
+        yield 2;
+        yield 3;
+    };
+
     function* generator() {
         yield 1;
         yield 2;
     }
     assert.true(is.iterable([]));
     assert.true(is.iterable(""));
+    assert.true(is.iterable(new Uint8Array()));
     assert.true(is.iterable(new Map()));
     assert.true(is.iterable(new Set()));
+    assert.true(is.iterable(customIterable));
     assert.true(is.iterable(generator()));
     assert.false(is.iterable({}));
     assert.false(is.iterable(null));
 });
 
+// TODO: Test not complete enought
 ava("is.asyncIterable", function asyncIterable(assert) {
     assert.true(is.asyncIterable({
         [Symbol.asyncIterator]: () => {
@@ -87,6 +105,7 @@ ava("is.asyncIterable", function asyncIterable(assert) {
     }));
 });
 
+// TODO: Test not complete enought
 ava("is.generator", function generator(assert) {
     function* generator() {
         yield 1;
