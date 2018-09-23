@@ -4,27 +4,39 @@ const ava = require("ava");
 // Require Internal Dependencies
 const { isTypeOf, getObjectType, isObjectOfType } = require("../src/utils.js");
 
+// Helper
+const Objects = [{}, [], new Map(), new Set(), new WeakMap(), new WeakSet()];
+
 ava("isTypeOf", function isString(assert) {
+    const typeOfString = isTypeOf("string");
+    const typeOfObject = isTypeOf("object");
+
     // eslint-disable-next-line no-empty-function
     function hello() {}
-    assert.is(isTypeOf("string")("hello"), true);
-    assert.is(isTypeOf("string")(new String("hello")), false);
-    assert.is(isTypeOf("string")(5), false);
-    assert.is(isTypeOf("string")({}), false);
-    assert.is(isTypeOf("number")(5), true);
-    assert.is(isTypeOf("boolean")(true), true);
-    assert.is(isTypeOf("symbol")(Symbol("hello")), true);
-    assert.is(isTypeOf("undefined")(undefined), true);
-    assert.is(isTypeOf("undefined")(void 0), true);
+    assert.true(typeOfString("hello"));
+    assert.false(typeOfString(new String("hello")));
+    assert.false(typeOfString(5));
+    assert.false(typeOfString({}));
+    assert.true(isTypeOf("number")(5));
+    assert.true(isTypeOf("boolean")(true));
+    assert.true(isTypeOf("symbol")(Symbol("hello")));
+    assert.true(isTypeOf("undefined")(undefined));
+    assert.true(isTypeOf("undefined")(void 0));
     // assert.is(isTypeOf("bigint")(50n), true);
-    assert.is(isTypeOf("function")(hello), true);
+
+    assert.true(isTypeOf("function")(hello), true);
     // eslint-disable-next-line no-empty-function
-    assert.is(isTypeOf("function")(() => {}), true);
+    assert.true(isTypeOf("function")(() => {}), true);
+
+    assert.true(typeOfObject(null));
+    for (const obj of Objects) {
+        assert.true(typeOfObject(obj));
+    }
 });
 
 ava("isObjectOfType", function isObjectType(assert) {
-    assert.is(isObjectOfType("Map")(new Map()), true);
-    assert.is(isObjectOfType("Map")(5), false);
+    assert.true(isObjectOfType("Map")(new Map()));
+    assert.false(isObjectOfType("Map")(5));
 });
 
 ava("getObjectType", function objectType(assert) {
