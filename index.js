@@ -75,9 +75,12 @@ module.exports = {
     truthy: (value) => Boolean(value),
     falsy: (value) => !value,
     plainObject(value) {
+        if (getObjectType(value) !== "Object") {
+            return false;
+        }
         const prototype = Object.getPrototypeOf(value);
 
-        return getObjectType(value) === "Object" && (prototype === null || prototype === Object.getPrototypeOf({}));
+        return prototype === null || prototype === Object.getPrototypeOf({});
     },
     typedArray(value) {
         return TypedArrayTypes.has(getObjectType(value));

@@ -47,6 +47,8 @@ ava("is.plainObject", function plainObject(assert) {
     assert.true(is.plainObject({ hello: "world" }));
     assert.true(is.plainObject(Object.create(null)));
     assert.true(is.plainObject(new Object()));
+    assert.false(is.plainObject(null));
+    assert.false(is.plainObject(undefined));
     assert.false(is.plainObject([]));
     assert.false(is.plainObject(5));
 });
@@ -66,8 +68,11 @@ ava("is.classObject", function classObject(assert) {
     class User {}
     // eslint-disable-next-line
     class Admin extends User {}
+
+    const uT = new User();
     assert.true(is.classObject(User));
     assert.true(is.classObject(Admin));
+    assert.false(is.classObject(uT));
     assert.false(is.classObject(new cPrototype()));
     assert.false(is.classObject({}));
     assert.false(is.classObject([]));
