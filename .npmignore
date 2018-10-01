@@ -1,8 +1,10 @@
-tests
-test
-CONTRIBUTING.md
+test/
+tests/
+coverage/
+.nyc_output/
+docs/
 jsdoc.json
-coverage
-.nyc_output
+CONTRIBUTING.md
 .editorconfig
 .eslintrc
+.gitignore
