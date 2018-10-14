@@ -7,6 +7,15 @@ Package heavily inspired by `@sindresorhus/is`. This package aims to work on Nod
 ![V1.0](https://img.shields.io/badge/version-1.0.0-blue.svg)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
 
+## Why
+
+- Only focus on javascript type checking (without any other fancy feature).
+- Come with a well writed TypeScript definition.
+- Documented and tested (100% Coverage).
+- Focus on NodeJS support.
+- Maintained by the SlimIO team.
+- Is concerned about being stable.
+
 ## Getting Started
 
 This package is available in the Node Package Repository and can be easily installed with [npm](https://docs.npmjs.com/getting-started/what-is-npm) or [yarn](https://yarnpkg.com).
@@ -20,13 +29,16 @@ $ yarn add @slimio/is
 ## Usage example
 
 ```js
+const { strictEqual } = require("assert");
 const is = require("@slimio/is");
 
-console.log(is.string("hello")); // true;
-console.log(is.map(new Map())); // true
+strictEqual(is.bool(true), true);
+strictEqual(is.string("hello"), true);
+strictEqual(is.map(new Map()), true);
+strictEqual(is.func(() => {}), true);
 ```
 
-The `is` variable is an Object with a lot of methods (check the below API section).
+The `is` const namespace is a Plain JavaScript Object with a lot of exported methods (check the below API Documentation).
 
 ## API
 
@@ -110,15 +122,6 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | directInstanceOf | `is.directInstanceOf(Object, {})` |
 | truthy | `is.truthy(true)` |
 | falsy | `is.falsy("")` |
-
-## Why
-
-- Only focus on javascript type checking (without any other fancy feature).
-- Come with a well writed TypeScript definition.
-- Documented and tested (100% Coverage).
-- Focus on NodeJS support.
-- Maintained by the SlimIO team.
-- Is concerned about being stable.
 
 ## Licence
 
