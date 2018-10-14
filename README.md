@@ -4,7 +4,7 @@ NodeJS JavaScript Type checker (Primitives, Objects, etc..)
 Package heavily inspired by `@sindresorhus/is`. This package aims to work on NodeJS (no browser support).
 
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
-![V1.0](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![V1.0](https://img.shields.io/badge/version-1.2.0-blue.svg)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
 
 ## Why
