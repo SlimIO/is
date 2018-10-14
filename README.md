@@ -9,11 +9,9 @@ Package heavily inspired by `@sindresorhus/is`. This package aims to work on Nod
 
 ## Why
 
-- Only focus on javascript type checking (without any other fancy feature).
-- Come with a well writed TypeScript definition.
-- Documented and tested (100% Coverage).
+- Focus on type checking (no fancy feature).
 - Focus on NodeJS support.
-- Maintained by the SlimIO team.
+- Come with a TypeScript definition (which works).
 - Is concerned about being stable.
 
 ## Getting Started
