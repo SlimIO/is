@@ -13,6 +13,12 @@
     "coverage": "npx nyc ava",
     "report": "npx nyc report --reporter=html"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SlimIO/is.git"
