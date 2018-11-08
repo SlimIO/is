@@ -30,7 +30,9 @@ module.exports = {
     undefined: isTypeOf("undefined"),
     void: isTypeOf("undefined"),
     string: isTypeOf("string"),
-    number: isTypeOf("number"),
+    number(value) {
+        return !Number.isNaN(value) && isTypeOf("number")(value);
+    },
     boolean: isTypeOf("boolean"),
     bool: isTypeOf("boolean"),
     symbol: isTypeOf("symbol"),

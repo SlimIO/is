@@ -4,6 +4,12 @@ const ava = require("ava");
 // Require Package
 const is = require("..");
 
+ava("is.number of NaN", function isNull(assert) {
+    assert.false(is.number(NaN));
+    assert.true(is.number(10));
+    assert.false(is.number("10"));
+});
+
 ava("is.nullValue", function isNull(assert) {
     assert.true(is.nullValue(null));
     assert.false(is.nullValue(undefined));
