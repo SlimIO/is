@@ -8,6 +8,7 @@
   },
   "private": false,
   "scripts": {
+    "prepublish": "pkg-ok",
     "test": "ava --verbose",
     "doc": "jsdoc -c ./jsdoc.json -r",
     "coverage": "nyc ava",
@@ -47,6 +48,7 @@
     "eslint": "^5.7.0",
     "husky": "^1.1.2",
     "jsdoc": "^3.5.5",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "pkg-ok": "^2.3.1"
   }
 }
