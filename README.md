@@ -4,7 +4,7 @@ NodeJS JavaScript Type checker (Primitives, Objects, etc..)
 Package heavily inspired by `@sindresorhus/is`. This package aims to work on NodeJS (no browser support).
 
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
-![V1.0](https://img.shields.io/badge/version-1.2.0-blue.svg)
+![V1.0](https://img.shields.io/badge/version-1.3.0-blue.svg)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
 
 ## Why
@@ -54,7 +54,7 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | undefined | `is.undefined(undefined)` |
 | bigint | `is.bigint(50n)` |
 | nullValue | `is.nullValue(null)` |
-| nullOrUndefined | `is.nullOrUndefined(null | undefined)` |
+| nullOrUndefined | `is.nullOrUndefined(null)` |
 | primitive | `is.primitive("hello")` |
 
 > is.null is not available because of a name restriction.
