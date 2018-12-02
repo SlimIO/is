@@ -15,6 +15,7 @@ ava("isTypeOf", function isString(assert) {
     // eslint-disable-next-line no-empty-function
     function hello() {}
     assert.true(typeOfString("hello"));
+    // eslint-disable-next-line no-new-wrappers
     assert.false(typeOfString(new String("hello")));
     assert.false(typeOfString(5));
     assert.false(typeOfString({}));
@@ -56,9 +57,11 @@ ava("getObjectType", function objectType(assert) {
     assert.is(getObjectType(Infinity), "Number");
     assert.is(getObjectType(undefined), "Undefined");
     assert.is(getObjectType(null), "Null");
+    /* eslint-disable no-new-wrappers */
     assert.is(getObjectType(new Boolean(1)), "Boolean");
     assert.is(getObjectType(new String("hello")), "String");
     assert.is(getObjectType(new Number(10)), "Number");
+    /* eslint-enable no-new-wrappers */
     assert.is(getObjectType(new Error()), "Error");
     assert.is(getObjectType(new TypeError()), "Error");
     assert.is(getObjectType(new ReferenceError()), "Error");

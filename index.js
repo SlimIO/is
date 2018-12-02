@@ -51,6 +51,7 @@ module.exports = {
     generatorFunction: isObjectOfType("GeneratorFunction"),
     asyncFunction: isObjectOfType("AsyncFunction"),
     boundFunction(value) {
+        // eslint-disable-next-line no-prototype-builtins
         return this.func(value) && !value.hasOwnProperty("prototype");
     },
     regExp: isObjectOfType("RegExp"),

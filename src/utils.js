@@ -36,6 +36,7 @@ function getObjectType(value) {
  * isTypeString(5); // false
  */
 function isTypeOf(type) {
+    // eslint-disable-next-line valid-typeof
     return (value) => typeof value === type;
 }
 

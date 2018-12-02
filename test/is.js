@@ -52,6 +52,7 @@ ava("is.falsy", function falsy(assert) {
 ava("is.plainObject", function plainObject(assert) {
     assert.true(is.plainObject({ hello: "world" }));
     assert.true(is.plainObject(Object.create(null)));
+    // eslint-disable-next-line no-new-object
     assert.true(is.plainObject(new Object()));
     assert.false(is.plainObject(null));
     assert.false(is.plainObject(undefined));
@@ -79,6 +80,7 @@ ava("is.classObject", function classObject(assert) {
     assert.true(is.classObject(User));
     assert.true(is.classObject(Admin));
     assert.false(is.classObject(uT));
+    // eslint-disable-next-line new-cap
     assert.false(is.classObject(new cPrototype()));
     assert.false(is.classObject({}));
     assert.false(is.classObject([]));
