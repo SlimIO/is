@@ -1,11 +1,12 @@
 # SlimIO IS
-NodeJS JavaScript Type checker (Primitives, Objects, etc..)
-
-Package heavily inspired by `@sindresorhus/is`. This package aims to work on NodeJS (no browser support).
-
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/is/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![V1.0](https://img.shields.io/badge/version-1.3.0-blue.svg)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
+
+NodeJS JavaScript Type checker (Primitives, Objects, etc..)
+
+Package heavily inspired by `@sindresorhus/is`. This package aims to work on NodeJS (no browser support).
 
 ## Why
 
