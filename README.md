@@ -3,7 +3,7 @@
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![V1.0](https://img.shields.io/badge/version-1.3.0-blue.svg)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
-[![CircleCI](https://circleci.com/gh/SlimIO/is.svg?style=svg)](https://circleci.com/gh/SlimIO/is)
+[![CircleCI](https://circleci.com/gh/SlimIO/is.svg?style=svg)](https://circleci.com/gh/SlimIO/is) [![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
 
 NodeJS JavaScript Type checker (Primitives, Objects, etc..)
 
