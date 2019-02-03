@@ -5,14 +5,14 @@
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
 [![CircleCI](https://circleci.com/gh/SlimIO/is.svg?style=svg)](https://circleci.com/gh/SlimIO/is) [![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
 
-NodeJS JavaScript Type checker (Primitives, Objects, etc..)
+Node.js JavaScript Type checker (Primitives, Objects, etc..)
 
-Package heavily inspired by `@sindresorhus/is`. This package aims to work on NodeJS (no browser support).
+Package heavily inspired by `@sindresorhus/is`. This package aims to work on Node.js (no browser support).
 
 ## Why
 
 - Focus on type checking (no fancy feature).
-- Focus on NodeJS support.
+- Focus on Node.js support.
 - Come with a TypeScript definition (which works).
 - Is concerned about being stable.
 
