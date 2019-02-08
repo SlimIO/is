@@ -1,10 +1,11 @@
 # SlimIO IS
-![V1.3.0](https://img.shields.io/badge/version-1.3.0-blue.svg)
+![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/is/master/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/is/commit-activity)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+![size](https://img.shields.io/bundlephobia/min/@slimio/is.svg?style=flat)
 [![Known Vulnerabilities](https://snyk.io/test/github/SlimIO/is/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SlimIO/is?targetFile=package.json)
 ![0DEP](https://img.shields.io/badge/Dependencies-0-yellow.svg)
-[![CircleCI](https://circleci.com/gh/SlimIO/is.svg?style=svg)](https://circleci.com/gh/SlimIO/is) [![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/SlimIO/is.svg?branch=master)](https://travis-ci.com/SlimIO/is)
 
 Node.js JavaScript Type checker (Primitives, Objects, etc..)
