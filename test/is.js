@@ -158,6 +158,12 @@ ava("is.integer", function integer(assert) {
     assert.false(is.integer(0.5));
 });
 
+ava("is.emptyString", function integer(assert) {
+    assert.true(is.emptyString(""));
+    assert.false(is.emptyString(0.5));
+    assert.false(is.emptyString("hello"));
+});
+
 ava("is.typedArray", function typedArray(assert) {
     const typedArrays = [
         new Int8Array(0),
