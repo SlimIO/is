@@ -32,7 +32,19 @@
     "type": "git",
     "url": "git+https://github.com/SlimIO/is.git"
   },
-  "keywords": [],
+  "keywords": [
+      "is",
+      "typecheck",
+      "check",
+      "checking",
+      "typeof",
+      "instanceof",
+      "validate",
+      "node",
+      "test",
+      "assert",
+      "assertion"
+  ],
   "author": "SlimIO",
   "license": "MIT",
   "bugs": {
