@@ -182,3 +182,8 @@ ava("is.typedArray", function typedArray(assert) {
     assert.false(is.typedArray({}));
     assert.false(is.typedArray([]));
 });
+
+ava("is.utils.getObjectType", function integer(assert) {
+    assert.is(is.utils.getObjectType("hello"), "String");
+    assert.is(is.utils.getObjectType(new Map()), "Map");
+});
