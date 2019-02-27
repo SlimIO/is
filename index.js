@@ -77,6 +77,9 @@ module.exports = {
     integer: (value) => Number.isInteger(value),
     truthy: (value) => Boolean(value),
     falsy: (value) => !value,
+    emptyString(value) {
+        return typeof value === "string" && value === "";
+    },
     plainObject(value) {
         if (getObjectType(value) !== "Object") {
             return false;

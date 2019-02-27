@@ -63,6 +63,7 @@ declare namespace is {
     export function nan(value: any): boolean;
     export function integer(value: any): boolean;
     export function directInstanceOf(instance: any, focus: any): boolean;
+    export function emptyString(value: string): boolean;
 }
 
 export as namespace is;
