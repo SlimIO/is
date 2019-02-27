@@ -64,6 +64,10 @@ declare namespace is {
     export function integer(value: any): boolean;
     export function directInstanceOf(instance: any, focus: any): boolean;
     export function emptyString(value: string): boolean;
+
+    export namespace utils {
+        export function getObjectType(value: any): string;
+    }
 }
 
 export as namespace is;

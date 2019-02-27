@@ -108,5 +108,6 @@ module.exports = {
     },
     generator(value) {
         return this.iterable(value) && this.func(value.next) && this.func(value.throw);
-    }
+    },
+    utils: { getObjectType }
 };
