@@ -71,7 +71,7 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | promise | `is.promise(new Promise())` |
 | classObject | `is.classObject(new Class{})` |
 | array | `is.array([])` |
-| object | `is.nullValue({})` |
+| object | `is.object({})` |
 | plainObject | `is.plainObject(Object.create(null))` |
 | set | `is.set(new Set())` |
 | map | `is.map(new Map())` |
