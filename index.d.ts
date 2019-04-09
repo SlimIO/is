@@ -1,5 +1,3 @@
-/// <reference types="node" />
-
 declare namespace is {
     export type typeOf = (value: any) => boolean;
 
