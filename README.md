@@ -130,5 +130,9 @@ All methods can be called as follow: `is.{methodName}`. All methods return a `bo
 | falsy | `is.falsy("")` |
 | emptyString | `is.emptyString("")` |
 
+## Dependencies
+
+This project have no dependencies.
+
 ## License
 MIT
