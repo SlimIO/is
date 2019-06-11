@@ -1,6 +1,6 @@
 {
   "name": "@slimio/is",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "SlimIO is (JavaScript Primitives &amp; Objects type checker)",
   "main": "index.js",
   "engines": {
