@@ -25,6 +25,10 @@ const TypedArrayTypes = new Set([
     "Float64Array"
 ]);
 
+function nullOrUndefined(value) {
+    return value === null || typeof value === "undefined";
+}
+
 // Export all methods
 module.exports = {
     undefined: isTypeOf("undefined"),
@@ -39,9 +43,7 @@ module.exports = {
     bigint: isTypeOf("bigint"),
     func: isTypeOf("function"),
     nullValue: (value) => value === null,
-    nullOrUndefined(value) {
-        return this.nullValue(value) || typeof value === "undefined";
-    },
+    nullOrUndefined,
     array: Array.isArray,
     buffer: Buffer.isBuffer,
     primitive(value) {
@@ -52,7 +54,7 @@ module.exports = {
     asyncFunction: isObjectOfType("AsyncFunction"),
     boundFunction(value) {
         // eslint-disable-next-line no-prototype-builtins
-        return this.func(value) && !value.hasOwnProperty("prototype");
+        return isTypeOf("function")(value) && !value.hasOwnProperty("prototype");
     },
     regExp: isObjectOfType("RegExp"),
     date: isObjectOfType("Date"),
@@ -95,19 +97,21 @@ module.exports = {
         return Object.getPrototypeOf(instance) === focusClass.prototype;
     },
     classObject(value) {
-        return this.func(value) && value.toString().startsWith("class ");
+        return isTypeOf("function")(value) && value.toString().startsWith("class ");
     },
     object(value) {
-        return !this.nullOrUndefined(value) && (this.func(value) || typeof value === "object");
+        return !nullOrUndefined(value) && (isTypeOf("function")(value) || typeof value === "object");
     },
     iterable(value) {
-        return !this.nullOrUndefined(value) && this.func(value[Symbol.iterator]);
+        return !nullOrUndefined(value) && isTypeOf("function")(value[Symbol.iterator]);
     },
     asyncIterable(value) {
-        return !this.nullOrUndefined(value) && this.func(value[Symbol.asyncIterator]);
+        return !nullOrUndefined(value) && isTypeOf("function")(value[Symbol.asyncIterator]);
     },
     generator(value) {
-        return this.iterable(value) && this.func(value.next) && this.func(value.throw);
+        const isFn = isTypeOf("function");
+
+        return !nullOrUndefined(value) && isFn(value[Symbol.iterator]) && isFn(value.next) && isFn(value.throw);
     },
     utils: { getObjectType }
 };
