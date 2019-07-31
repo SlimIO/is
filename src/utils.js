@@ -1,16 +1,18 @@
+"use strict";
+
 // These methods are inspired of the work done on @sindresorhus/is: https://github.com/sindresorhus/is
 
 /**
  * @namespace utils
- * @desc utils methods
+ * @description utils methods
  */
 
 /**
  * @function getObjectType
  * @memberof utils#
- * @desc Known the name of a given JavaScript Object
+ * @description Known the name of a given JavaScript Object
  * @param {*} value any Object value
- * @returns {String | null}
+ * @returns {string | null}
  *
  * @example
  * getObjectType({}); // Object
@@ -26,8 +28,8 @@ function getObjectType(value) {
 /**
  * @function isTypeOf
  * @memberof utils#
- * @desc Known if a value if equal to the given Primitive type
- * @param {!String} type Primitive type
+ * @description Known if a value if equal to the given Primitive type
+ * @param {!string} type Primitive type
  * @returns {is.typeOf}
  *
  * @example
@@ -43,8 +45,8 @@ function isTypeOf(type) {
 /**
  * @function isObjectOfType
  * @memberof utils#
- * @desc Known if an Object name if equal to the closure Object name
- * @param {!String} type JavaScript Object
+ * @description Known if an Object name if equal to the closure Object name
+ * @param {!string} type JavaScript Object
  * @returns {is.typeOf}
  *
  * @example

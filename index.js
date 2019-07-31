@@ -1,17 +1,19 @@
+"use strict";
+
 // Require Internal Dependencies
 const { getObjectType, isTypeOf, isObjectOfType } = require("./src/utils");
 
 /**
- * @const Primitives
- * @desc All JavaScript Primitives
- * @type {Set<String>}
+ * @constant Primitives
+ * @description All JavaScript Primitives
+ * @type {Set<string>}
  */
 const Primitives = new Set(["string", "number", "boolean", "undefined", "symbol", "bigint"]);
 
 /**
- * @const TypedArrayTypes
- * @desc All JavaScript Typed Array Types
- * @type {Set<String>}
+ * @constant TypedArrayTypes
+ * @description All JavaScript Typed Array Types
+ * @type {Set<string>}
  */
 const TypedArrayTypes = new Set([
     "Int8Array",
@@ -25,6 +27,11 @@ const TypedArrayTypes = new Set([
     "Float64Array"
 ]);
 
+/**
+ * @function nullOrUndefined
+ * @param {number} value
+ * @returns {number}
+ */
 function nullOrUndefined(value) {
     return value === null || typeof value === "undefined";
 }

@@ -1,3 +1,5 @@
+"use strict";
+
 // Require Third-party Dependencies
 const ava = require("ava");
 
@@ -13,7 +15,12 @@ ava("isTypeOf", function isString(assert) {
     const typeOfFunction = isTypeOf("function");
 
     // eslint-disable-next-line no-empty-function
-    function hello() {}
+    /**
+     * @function hello
+     */
+    function hello() {
+        // do thing
+    }
     assert.true(typeOfString("hello"));
     // eslint-disable-next-line no-new-wrappers
     assert.false(typeOfString(new String("hello")));

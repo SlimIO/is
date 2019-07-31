@@ -1,3 +1,5 @@
+"use strict";
+
 // Require Third-party Dependencies
 const ava = require("ava");
 
@@ -25,6 +27,9 @@ ava("is.nullOrUndefined", function nullOrUndefined(assert) {
 });
 
 ava("is.boundFonction", function boundFunction(assert) {
+    /**
+     * @function fn
+     */
     function fn() {
         // Do nothing
     }
@@ -67,6 +72,9 @@ ava("is.object", function object(assert) {
 });
 
 ava("is.classObject", function classObject(assert) {
+    /**
+     * @function cPrototype
+     */
     function cPrototype() {
         // Do nothing
     }
@@ -94,6 +102,9 @@ ava("is.iterable", function iterable(assert) {
         yield 3;
     };
 
+    /**
+     * @generator generator
+     */
     function* generator() {
         yield 1;
         yield 2;
@@ -120,6 +131,9 @@ ava("is.asyncIterable", function asyncIterable(assert) {
 
 // TODO: Test not complete enought
 ava("is.generator", function generator(assert) {
+    /**
+     * @generator
+     */
     function* generator() {
         yield 1;
         yield 2;
