@@ -5,8 +5,8 @@
 ![size](https://img.shields.io/bundlephobia/min/@slimio/is.svg?style=flat)
 [![Known Vulnerabilities](https://snyk.io/test/github/SlimIO/is/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SlimIO/is?targetFile=package.json)
 ![dep](https://img.shields.io/david/SlimIO/is.svg)
-[![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.com/SlimIO/is.svg?branch=master)](https://travis-ci.com/SlimIO/is)
+[![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/is.svg)](https://greenkeeper.io/)
 
 Node.js JavaScript Type checker (Primitives, Objects, etc..)
 
