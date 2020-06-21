@@ -12,7 +12,9 @@
     "test": "cross-env psp && nyc --reporter=lcov ava --verbose",
     "doc": "jsdoc -c ./jsdoc.json -r -R ./README.md -P ./package.json --verbose",
     "coverage": "codecov",
-    "report": "nyc report --reporter=html"
+    "report": "nyc report --reporter=html",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "husky": {
     "hooks": {
@@ -57,7 +59,7 @@
   },
   "homepage": "https://github.com/SlimIO/is#readme",
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
+    "@commitlint/cli": "^9.0.0",
     "@commitlint/config-conventional": "^8.3.4",
     "@escommunity/minami": "^1.0.0",
     "@slimio/eslint-config": "^4.1.0",
@@ -71,5 +73,8 @@
     "nyc": "^15.0.1",
     "pkg-ok": "^2.3.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "snyk": "^1.346.0"
+  },
+  "snyk": true
 }
