@@ -4,29 +4,12 @@
   "description": "SlimIO is (JavaScript Primitives &amp; Objects type checker)",
   "main": "index.js",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "private": false,
   "scripts": {
     "prepublishOnly": "pkg-ok",
-    "test": "cross-env psp && nyc --reporter=lcov ava --verbose",
-    "doc": "jsdoc -c ./jsdoc.json -r -R ./README.md -P ./package.json --verbose",
-    "coverage": "codecov",
-    "report": "nyc report --reporter=html"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "cross-env npm test && eslint index.js src/**",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": false,
-    "lines": 98,
-    "statements": 98,
-    "functions": 98,
-    "branches": 90
+    "test": "c8 -r html ava --verbose"
   },
   "repository": {
     "type": "git",
@@ -57,19 +40,12 @@
   },
   "homepage": "https://github.com/SlimIO/is#readme",
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@escommunity/minami": "^1.0.0",
-    "@slimio/eslint-config": "^4.1.0",
-    "@slimio/psp": "^0.11.1",
+    "@nodesecure/eslint-config": "^1.6.0",
+    "@types/node": "^18.11.18",
     "ava": "^3.8.2",
-    "codecov": "^3.7.0",
+    "c8": "^7.12.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.0.0",
-    "husky": "^4.2.5",
-    "jsdoc": "^3.6.4",
-    "nyc": "^15.0.1",
     "pkg-ok": "^2.3.1"
-  },
-  "dependencies": {}
+  }
 }

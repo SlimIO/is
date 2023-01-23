@@ -1,5 +1,3 @@
-"use strict";
-
 // These methods are inspired of the work done on @sindresorhus/is: https://github.com/sindresorhus/is
 
 /**
@@ -20,9 +18,9 @@
  * getObjectType(new Set()); // Set
  */
 function getObjectType(value) {
-    // Object.prototype.toString.call will return object like [object Map], [object Set] etc
-    // Slice from index 8 to value.length - 1
-    return Object.prototype.toString.call(value).slice(8, -1);
+  // Object.prototype.toString.call will return object like [object Map], [object Set] etc
+  // Slice from index 8 to value.length - 1
+  return Object.prototype.toString.call(value).slice(8, -1);
 }
 
 /**
@@ -38,8 +36,8 @@ function getObjectType(value) {
  * isTypeString(5); // false
  */
 function isTypeOf(type) {
-    // eslint-disable-next-line valid-typeof
-    return (value) => typeof value === type;
+  // eslint-disable-next-line valid-typeof
+  return (value) => typeof value === type;
 }
 
 /**
@@ -55,12 +53,12 @@ function isTypeOf(type) {
  * isTypeMap({}); // false
  */
 function isObjectOfType(type) {
-    return (value) => getObjectType(value) === type;
+  return (value) => getObjectType(value) === type;
 }
 
 module.exports = {
-    getObjectType,
-    isTypeOf,
-    isObjectOfType
+  getObjectType,
+  isTypeOf,
+  isObjectOfType
 };
 

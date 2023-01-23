@@ -1,4 +1,4 @@
-# Contributing to Slim.io
+# Contributing to SlimIO
 
 Contributions to Slim.io include code, documentation, answering user questions,
 running the project's infrastructure, and advocating for all types of Slim.io

@@ -4,8 +4,6 @@
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 ![size](https://img.shields.io/bundlephobia/min/@slimio/is.svg?style=flat)
 [![Known Vulnerabilities](https://snyk.io/test/github/SlimIO/is/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SlimIO/is?targetFile=package.json)
-![dep](https://img.shields.io/david/SlimIO/is.svg)
-[![Build Status](https://travis-ci.com/SlimIO/is.svg?branch=master)](https://travis-ci.com/SlimIO/is)
 
 Node.js JavaScript Type checker (Primitives, Objects, etc..)
 
@@ -19,7 +17,7 @@ Package heavily inspired by `@sindresorhus/is`. This package aims to work on Nod
 - Is concerned about being stable.
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v12 or higher.
+- [Node.js](https://nodejs.org/en/) v16 or higher.
 
 ## Getting Started
 
