@@ -1,9 +1,9 @@
 # SlimIO IS
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/SlimIO/is/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/SlimIO/is/commit-activity)
-![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
-![size](https://img.shields.io/bundlephobia/min/@slimio/is.svg?style=flat)
-[![Known Vulnerabilities](https://snyk.io/test/github/SlimIO/is/badge.svg?targetFile=package.json)](https://snyk.io/test/github/SlimIO/is?targetFile=package.json)
+![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/SlimIO/is/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/SlimIO/is/commit-activity)
+![MIT](https://img.shields.io/github/license/mashape/apistatus.svg?style=for-the-badge)
+![size](https://img.shields.io/bundlephobia/min/@slimio/is.svg?style=for-the-badge)
+![build](https://img.shields.io/github/actions/workflow/status/SlimIO/is/node.js.yml?style=for-the-badge)
 
 Node.js JavaScript Type checker (Primitives, Objects, etc..)
 
